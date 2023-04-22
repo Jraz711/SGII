@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace SGII
 {
-    public partial class AdminMain : Form
+    public partial class Signup : Form
     {
-        public AdminMain()
+        public Signup()
         {
             InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
