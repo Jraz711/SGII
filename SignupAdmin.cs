@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SGII
 {
-    public partial class Signup : Form
+    public partial class SignupAdmin : Form
     {
-        public Signup()
+        public SignupAdmin()
         {
             InitializeComponent();
         }

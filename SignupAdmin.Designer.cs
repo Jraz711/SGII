@@ -1,6 +1,6 @@
 ﻿namespace SGII
 {
-    partial class Signup
+    partial class SignupAdmin
     {
         /// <summary>
         /// Required designer variable.
