@@ -52,7 +52,7 @@ namespace SGII
                         {
                             MyConnection.rol = "A";
                         }
-                        MessageBox.Show("Welcome " + textBox1.Text);
+                        MessageBox.Show("Bienvenido !!!!  " + textBox1.Text);
 
                         AdminMain d = new AdminMain ();
                         d.Show();
