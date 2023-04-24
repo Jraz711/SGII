@@ -50,9 +50,6 @@
     <Compile Include="AdminMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="AdminMain.Designer.cs">
       <DependentUpon>AdminMain.cs</DependentUpon>
     </Compile>
@@ -68,18 +65,18 @@
     <Compile Include="LoginAdmin.Designer.cs">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
     <Compile Include="MyConnection.cs" />
     <Compile Include="M_User.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="M_User.Designer.cs">
       <DependentUpon>M_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantalla principal.Designer.cs">
+      <DependentUpon>Pantalla principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,11 +101,11 @@
     <EmbeddedResource Include="LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="M_User.resx">
       <DependentUpon>M_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla principal.resx">
+      <DependentUpon>Pantalla principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

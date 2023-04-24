@@ -10,24 +10,21 @@ using System.Windows.Forms;
 
 namespace SGII
 {
-    public partial class REGISTRO : Form
+    public partial class Pantalla_principal : Form
     {
-        public REGISTRO()
+        public Pantalla_principal()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
+        {
+            Login f = new Login();
+            f.Show();
+            this.Hide();
+        }
+
+        private void cONFIGURACONToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
