@@ -48,7 +48,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(295, 374);
+            this.button1.Location = new System.Drawing.Point(287, 389);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(239, 39);
@@ -65,7 +65,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(883, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(883, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -75,7 +75,7 @@
             this.aDMINToolStripMenuItem,
             this.uSERToolStripMenuItem1});
             this.uSERToolStripMenuItem.Name = "uSERToolStripMenuItem";
-            this.uSERToolStripMenuItem.Size = new System.Drawing.Size(65, 26);
+            this.uSERToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.uSERToolStripMenuItem.Text = "LOGIN";
             // 
             // aDMINToolStripMenuItem
@@ -136,7 +136,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(12, 52);
+            this.linkLabel1.Location = new System.Drawing.Point(284, 354);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(104, 16);
             this.linkLabel1.TabIndex = 7;
