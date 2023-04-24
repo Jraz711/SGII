@@ -91,6 +91,7 @@
             this.menuStrip2.Size = new System.Drawing.Size(884, 24);
             this.menuStrip2.TabIndex = 7;
             this.menuStrip2.Text = "menuStrip2";
+            this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
             // 
             // label1
             // 
@@ -143,6 +144,7 @@
             this.Controls.Add(this.menuStrip2);
             this.Name = "M_User";
             this.Text = "M_User";
+            this.Load += new System.EventHandler(this.M_User_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);

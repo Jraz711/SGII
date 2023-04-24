@@ -31,5 +31,15 @@ namespace SGII
         {
 
         }
+
+        private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void M_User_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
