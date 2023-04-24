@@ -16,7 +16,11 @@ namespace SGII
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< Updated upstream
             Application.Run(new Main());
+=======
+            Application.Run(new Login());
+>>>>>>> Stashed changes
         }
     }
 }
