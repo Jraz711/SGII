@@ -28,5 +28,12 @@ namespace SGII
         {
 
         }
+
+        private void iNICIOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pantalla_principal d = new Pantalla_principal();
+            d.ShowDialog();
+            this.Hide();
+        }
     }
 }

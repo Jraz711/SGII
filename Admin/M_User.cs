@@ -42,5 +42,10 @@ namespace SGII
             f.Show();
             this.Hide();
         }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
