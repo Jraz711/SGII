@@ -91,7 +91,9 @@ namespace SGII
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            REGISTRO d = new REGISTRO();
+            d.Show();
+            this.Hide();
         }
     }
 }
