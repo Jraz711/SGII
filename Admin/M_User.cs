@@ -16,6 +16,10 @@ namespace SGII
         {
             InitializeComponent();
         }
+        private void M_User_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -30,6 +34,13 @@ namespace SGII
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SignupAdmin f = new SignupAdmin();
+            f.Show();
+            this.Hide();
         }
     }
 }

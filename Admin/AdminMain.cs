@@ -32,9 +32,9 @@ namespace SGII
 
         private void button3_Click(object sender, EventArgs e)
         {
-            M_User f = new M_User ();
-            f.Show();
-            this.Hide();
+             M_User am = new M_User();
+            am.MdiParent = AdminMain.ActiveForm;
+            am.Show();
         }
         private void button4_Click(object sender, EventArgs e)
         {

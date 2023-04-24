@@ -47,10 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminMain.cs">
+    <Compile Include="Admin\AdminMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminMain.Designer.cs">
+    <Compile Include="Admin\AdminMain.Designer.cs">
       <DependentUpon>AdminMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -59,17 +59,17 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginAdmin.cs">
+    <Compile Include="Admin\LoginAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginAdmin.Designer.cs">
+    <Compile Include="Admin\LoginAdmin.Designer.cs">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="MyConnection.cs" />
-    <Compile Include="M_User.cs">
+    <Compile Include="Admin\M_User.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="M_User.Designer.cs">
+    <Compile Include="Admin\M_User.Designer.cs">
       <DependentUpon>M_User.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantalla principal.cs">
@@ -86,22 +86,22 @@
     <Compile Include="REGISTRO.Designer.cs">
       <DependentUpon>REGISTRO.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignupAdmin.cs">
+    <Compile Include="Admin\SignupAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignupAdmin.Designer.cs">
+    <Compile Include="Admin\SignupAdmin.Designer.cs">
       <DependentUpon>SignupAdmin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminMain.resx">
+    <EmbeddedResource Include="Admin\AdminMain.resx">
       <DependentUpon>AdminMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginAdmin.resx">
+    <EmbeddedResource Include="Admin\LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="M_User.resx">
+    <EmbeddedResource Include="Admin\M_User.resx">
       <DependentUpon>M_User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantalla principal.resx">
@@ -119,7 +119,7 @@
     <EmbeddedResource Include="REGISTRO.resx">
       <DependentUpon>REGISTRO.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignupAdmin.resx">
+    <EmbeddedResource Include="Admin\SignupAdmin.resx">
       <DependentUpon>SignupAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
