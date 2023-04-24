@@ -13,7 +13,7 @@ namespace SGII
 {
     public partial class Login : Form
     {
-        MyConnection db = new MyConnection();
+       
         public Login()
         {
             InitializeComponent();
@@ -30,6 +30,7 @@ namespace SGII
         {
             try
             {
+                MyConnection db = new MyConnection();
                 using (db.con)
                 {
                     SqlCommand cmd = new SqlCommand("sp_SGII", db.con);
@@ -58,7 +59,7 @@ namespace SGII
                     {
                         MessageBox.Show("ERROR");
                     }
-
+                    db.con.Close();
                 }
             }
             catch (Exception ex)
@@ -94,6 +95,11 @@ namespace SGII
             REGISTRO d = new REGISTRO();
             d.Show();
             this.Hide();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
