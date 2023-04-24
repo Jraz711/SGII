@@ -44,19 +44,18 @@ namespace SGII
                     if (rd.HasRows)
                     {
                         rd.Read();
-                        if (rd[7].ToString() == "1")
+                        if (rd[6].ToString() == "1")
                         {
                             MyConnection.rol = "SA";
                         }
-                        else if (rd[7].ToString() == "2")
+                        else if (rd[6].ToString() == "2")
                         {
                             MyConnection.rol = "A";
                         }
-                        MessageBox.Show("Bienvenido !!!!  " + textBox1.Text);
-
                         AdminMain d = new AdminMain ();
                         d.Show();
                         this.Hide();
+
                     }
                     else
                     {
