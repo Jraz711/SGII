@@ -13,7 +13,7 @@ namespace SGII
 {
     public partial class LoginAdmin : Form
     {
-        MyConnection db = new MyConnection();
+        
         public LoginAdmin()
         {
             InitializeComponent();
@@ -33,6 +33,7 @@ namespace SGII
         {
             try
             {
+                MyConnection db = new MyConnection();
                 using (db.con)
                 {
                     SqlCommand cmd = new SqlCommand("sp_SGII", db.con);
@@ -61,13 +62,14 @@ namespace SGII
                     {
                         MessageBox.Show("ERROR");
                     }
-
+                    db.con.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
+           
         }
 
         private void LoginAdmin_Load(object sender, EventArgs e)
@@ -78,7 +80,7 @@ namespace SGII
         private void aDMINToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoginAdmin d = new LoginAdmin();
-            d.Show();
+            d.ShowDialog();
             this.Hide();
                     }
 
@@ -92,6 +94,19 @@ namespace SGII
             Login d = new Login();
             d.Show();
             this.Hide();
+        }
+
+        private void LoginAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) 
+            { 
+            button1_Click(null,null );
+            }
         }
     }
 }

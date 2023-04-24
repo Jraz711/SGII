@@ -52,7 +52,7 @@
             this.label1.Location = new System.Drawing.Point(237, 208);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 22);
+            this.label1.Size = new System.Drawing.Size(67, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Usuario:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -66,7 +66,7 @@
             this.label2.Location = new System.Drawing.Point(237, 285);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 22);
+            this.label2.Size = new System.Drawing.Size(99, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Contraseña:";
             // 
@@ -77,7 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(241, 231);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(374, 30);
+            this.textBox1.Size = new System.Drawing.Size(374, 26);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
@@ -88,8 +88,9 @@
             this.textBox2.Location = new System.Drawing.Point(241, 308);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(374, 30);
+            this.textBox2.Size = new System.Drawing.Size(374, 26);
             this.textBox2.TabIndex = 4;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // button1
             // 
@@ -121,7 +122,7 @@
             this.lOGINToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(884, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(884, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -131,25 +132,25 @@
             this.uSERToolStripMenuItem,
             this.aDMINToolStripMenuItem});
             this.lOGINToolStripMenuItem.Name = "lOGINToolStripMenuItem";
-            this.lOGINToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.lOGINToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.lOGINToolStripMenuItem.Text = "LOGIN";
             // 
             // uSERToolStripMenuItem
             // 
             this.uSERToolStripMenuItem.Name = "uSERToolStripMenuItem";
-            this.uSERToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.uSERToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.uSERToolStripMenuItem.Text = "USER";
             this.uSERToolStripMenuItem.Click += new System.EventHandler(this.uSERToolStripMenuItem_Click);
             // 
             // aDMINToolStripMenuItem
             // 
             this.aDMINToolStripMenuItem.Name = "aDMINToolStripMenuItem";
-            this.aDMINToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aDMINToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.aDMINToolStripMenuItem.Text = "ADMIN";
             // 
             // LoginAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.pictureBox1);
@@ -165,6 +166,7 @@
             this.Name = "LoginAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginAdmin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginAdmin_FormClosed);
             this.Load += new System.EventHandler(this.LoginAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
