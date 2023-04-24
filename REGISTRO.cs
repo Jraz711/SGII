@@ -14,8 +14,7 @@ namespace SGII
 {
     public partial class REGISTRO : Form
     {
-        MyConnection db
-            = new MyConnection();
+        
 
         public REGISTRO()
         {
@@ -34,9 +33,29 @@ namespace SGII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string cadema = "";
+            MyConnection db = new MyConnection();
+            using (db.con) { 
+            
+            SqlCommand comando = new SqlCommand("Almacenar_SGII");
+                comando.CommandType = CommandType.StoredProcedure;
+                db.con.Open();
+                comando.Parameters.AddWithValue("@Username", textBox3.Text);
+            comando.Parameters.AddWithValue("@Name", textBox1.Text);
+            comando.Parameters.AddWithValue("@LastName", textBox2.Text);
+            comando.Parameters.AddWithValue("PassWord", textBox4.Text);
+            comando.Parameters.AddWithValue("@Email", textBox6.Text);
 
+                try
+                {
+                    comando.ExecuteNonQuery();
+                }
                 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+                db.con.Close();
+            }
 
         }
 
@@ -56,5 +75,7 @@ namespace SGII
         {
 
         }
+
+        
     }
 }
