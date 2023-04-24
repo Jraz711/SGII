@@ -70,5 +70,28 @@ namespace SGII
             }
         }
 
-          }
+        private void LoginAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aDMINToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginAdmin d = new LoginAdmin();
+            d.Show();
+            this.Hide();
+                    }
+
+        private void uSERToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uSERToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login d = new Login();
+            d.Show();
+            this.Hide();
+        }
+    }
 }
