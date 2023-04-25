@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,85 @@ namespace SGII
 
         private void label5_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            insertar();
+
+            SignupAdmin SA = new SignupAdmin();
+            SA.ShowDialog();
+            this.Hide();
+
+        }
+        private void insertar()
+        {
+            SqlConnection conn = new SqlConnection();
+
+            conn.ConnectionString = "Data Source=JRAZ711\\SQLEXPRESS;Initial Catalog=SGII;Integrated Security=True";
+
+            conn.Open();
+
+            string str = "INSERT INTO [User](Username,Password, Name ,LastName,Email,IdRol,Estatus) VALUES( @Username,@Password, @Name ,@LastName,@Email,@IdRol,@Estatus)";
+
+            SqlCommand cmd = new SqlCommand(str);
+
+            cmd.Parameters.AddWithValue("@Username", textBox1.Text);
+            cmd.Parameters.AddWithValue("@Password", textBox2.Text);
+            cmd.Parameters.AddWithValue("@Name", textBox4.Text);
+            cmd.Parameters.AddWithValue("@LastName", textBox5.Text);
+            cmd.Parameters.AddWithValue("@Email", textBox6.Text);
+            cmd.Parameters.AddWithValue("@IdRol", comboBox1.Text);
+            cmd.Parameters.AddWithValue("@Estatus", comboBox2.Text);
+
+            cmd.Connection = conn;
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
 
         }
     }

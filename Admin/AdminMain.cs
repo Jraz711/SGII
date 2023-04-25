@@ -68,5 +68,10 @@ namespace SGII
             f.Show();
             this.Hide();
         }
+
+        private void AdminMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
