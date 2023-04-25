@@ -9,28 +9,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SGII
+namespace SGII.Admin
 {
-    public partial class SignupAdmin : Form
+    public partial class Modify : Form
     {
-        public SignupAdmin()
+        int id=0;
+        public Modify()
         {
             InitializeComponent();
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        public Modify(int id)
         {
-
+            this.id = id;
+            if (id == 0)
+            {
+                Close();
+            }
+            InitializeComponent();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            M_User f = new M_User();
-            f.Show();
-            this.Hide();
-        }
-
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
@@ -40,49 +47,13 @@ namespace SGII
 
         }
 
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            insertar();
+            Actualizar();
             Close();
-
         }
-        private void insertar()
+
+        private void Actualizar()
         {
             SqlConnection conn = new SqlConnection();
 
@@ -90,7 +61,8 @@ namespace SGII
 
             conn.Open();
 
-            string str = "INSERT INTO [User](Username,Password, Name ,LastName,Email,IdRol,Estatus) VALUES( @Username,@Password, @Name ,@LastName,@Email,@IdRol,@Estatus)";
+            string str = $"Update [User] Set Username=@Username,Password=@Password,Name=@Name,LastName=@LastName,Email=@Email,IdRol=@IdRol,Estatus=@Estatus" +
+                $" where id={id}";
 
             SqlCommand cmd = new SqlCommand(str);
 
@@ -108,12 +80,15 @@ namespace SGII
 
             conn.Close();
 
+            
 
         }
 
-        private void SignupAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            M_User f = new M_User();
+            f.Show();
+            this.Hide();
         }
     }
 }

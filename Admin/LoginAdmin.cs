@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,44 +32,8 @@ namespace SGII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                MyConnection db = new MyConnection();
-                using (db.con)
-                {
-                    SqlCommand cmd = new SqlCommand("sp_SGII", db.con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    db.con.Open();
-                    cmd.Parameters.AddWithValue("@uname", textBox1.Text);
-                    cmd.Parameters.AddWithValue("@upass", textBox2.Text);
-                    SqlDataReader rd = cmd.ExecuteReader();
-                    if (rd.HasRows)
-                    {
-                        rd.Read();
-                        if (rd[6].ToString() == "1")
-                        {
-                            MyConnection.rol = "SA";
-                        }
-                        else if (rd[6].ToString() == "2")
-                        {
-                            MyConnection.rol = "A";
-                        }
-                        AdminMain d = new AdminMain ();
-                        d.Show();
-                        this.Hide();
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("Contraseña y/o Usuario Incorrecto");
-                    }
-                    db.con.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            logueo();
            
         }
 
@@ -106,6 +71,70 @@ namespace SGII
             if (e.KeyCode == Keys.Enter) 
             { 
             button1_Click(null,null );
+            }
+        }
+
+        public void logueo() 
+        {
+            int count = 0;
+
+            try
+            {
+                MyConnection db = new MyConnection();
+                using (db.con)
+                {
+                    SqlCommand cmd = new SqlCommand("sp_SGII", db.con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    db.con.Open();
+                    cmd.Parameters.AddWithValue("@uname", textBox1.Text);
+                    cmd.Parameters.AddWithValue("@upass", textBox2.Text);
+                    SqlDataReader rd = cmd.ExecuteReader();
+                    if (rd.HasRows)
+                    {
+                        rd.Read();
+                        if (rd[6].ToString() == "1")
+                        {
+                            MyConnection.rol = "SA";
+                            AdminMain d = new AdminMain();
+                            d.ShowDialog();
+                            this.Hide();
+
+                        }
+                        else if (rd[6].ToString() == "2")
+                        {
+                            MyConnection.rol = "A";
+                            AdminMain d = new AdminMain();
+                            d.ShowDialog();
+                            this.Hide();
+                        }
+
+                        else if (rd[6].ToString() == "3")
+                        {
+                            MyConnection.rol = "U";
+                            MessageBox.Show("Usted no es un usuario Administrador");
+
+                        }
+
+                    }
+
+                    else 
+                    {
+                        count = +1;
+                        MessageBox.Show("Contraseña y/o Usuario Incorrecto");
+                        if (count > 3)
+                        {
+                            MessageBox.Show("Usuario Bloqueado, Intente mas Tarde");
+                        }
+
+                    }
+                    
+
+                    db.con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

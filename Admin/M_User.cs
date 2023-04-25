@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGII.Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,10 +21,7 @@ namespace SGII
         }
         private void M_User_Load(object sender, EventArgs e)
         {
-            //string consulta = "select * from user";
-            //SqlDataAdapter adapter = new SqlDataAdapter(consulta,db.con);
-            //DataTable dt = new DataTable();
-            //adapter.Fill(dt);
+            consultarTodo();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -56,7 +54,7 @@ namespace SGII
         private void iNICIOToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AdminMain AM = new AdminMain();
-            AM.ShowDialog();
+            AM.Show();
             this.Hide();
         }
 
@@ -64,13 +62,40 @@ namespace SGII
         private void button4_Click(object sender, EventArgs e)
 
         {
-
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             consultarTodo();
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            buscarusuario();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            eliminar();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int.TryParse(textBox1.Text, out int id);
+            Modify M = new Modify(id);
+            M.ShowDialog();
+            consultarTodo();
         }
 
         private void consultarTodo()
@@ -81,9 +106,38 @@ namespace SGII
 
             conn.Open();
 
-            string str = "SELECT Username, Name ,LastName,Email,IdRol FROM [User]";
+            string str = "SELECT * FROM [User]";
 
             SqlCommand cmd = new SqlCommand(str);
+
+            cmd.Connection = conn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            dataGridView1.DataSource = dt;
+
+            conn.Close();
+
+
+        }
+
+        private void buscarusuario()
+        {
+            SqlConnection conn = new SqlConnection();
+
+            conn.ConnectionString = "Data Source=JRAZ711\\SQLEXPRESS;Initial Catalog=SGII;Integrated Security=True";
+
+            conn.Open();
+
+            string str = "SELECT * FROM [User] where Id = @Id";
+
+            SqlCommand cmd = new SqlCommand(str);
+
+            cmd.Parameters.AddWithValue("@Id", textBox1.Text);
 
             cmd.Connection = conn;
 
@@ -113,7 +167,7 @@ namespace SGII
 
             SqlCommand cmd = new SqlCommand(str);
 
-            //cmd.Parameters.AddWithValue("@MATRICULA", TxtMatricula.Text);
+            cmd.Parameters.AddWithValue("@Id", textBox1.Text);
 
             cmd.Connection = conn;
 
@@ -123,15 +177,6 @@ namespace SGII
 
             consultarTodo();
         }
-
-
-
-
-
-
-
-
-
 
 
     }
