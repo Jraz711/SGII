@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SGII
 {
@@ -33,33 +34,38 @@ namespace SGII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MyConnection db = new MyConnection();
-            using (db.con) { 
             
-            SqlCommand comando = new SqlCommand("Almacenar_SGII");
-                comando.CommandType = CommandType.StoredProcedure;
-                db.con.Open();
-                comando.Parameters.AddWithValue("@Username", textBox3.Text);
-            comando.Parameters.AddWithValue("@Name", textBox1.Text);
-            comando.Parameters.AddWithValue("@LastName", textBox2.Text);
-            comando.Parameters.AddWithValue("PassWord", textBox4.Text);
-            comando.Parameters.AddWithValue("@Email", textBox6.Text);
+                SqlConnection conn = new SqlConnection();
 
-                try
-                {
-                    comando.ExecuteNonQuery();
-                }
-                
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-                db.con.Close();
-            }
+                conn.ConnectionString = "Data Source=DESKTOP-0UKK8GV\\SQLEXPRESS;Initial Catalog=SGII;Integrated Security=True";
+
+                conn.Open();
+
+                string str = "INSERT INTO [User](Username,Password, Name ,LastName,Email,IdRol,Estatus) VALUES( @Username,@Password, @Name ,@LastName,@Email,@IdRol,@Estatus)";
+
+                SqlCommand cmd = new SqlCommand(str);
+
+                cmd.Parameters.AddWithValue("@Username", textBox3.Text);
+                cmd.Parameters.AddWithValue("@Password", textBox4.Text);
+                cmd.Parameters.AddWithValue("@Name", textBox2.Text);
+                cmd.Parameters.AddWithValue("@LastName", textBox1.Text);
+                cmd.Parameters.AddWithValue("@Email", textBox6.Text);
+                cmd.Parameters.AddWithValue("@IdRol", "3");
+                cmd.Parameters.AddWithValue("@Estatus", "1");
+
+                cmd.Connection = conn;
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+
+            Login d = new Login();
+            d.Show();
+            this.Hide();
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+            private void label3_Click(object sender, EventArgs e)
         {
 
         }
@@ -76,6 +82,9 @@ namespace SGII
 
         }
 
-        
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -60,7 +60,9 @@ namespace SGII
             this.Hide();
         }
 
+
         private void button4_Click(object sender, EventArgs e)
+
         {
 
         }
@@ -121,6 +123,7 @@ namespace SGII
 
             consultarTodo();
         }
+
 
 
 
