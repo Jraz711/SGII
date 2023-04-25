@@ -60,7 +60,7 @@ namespace SGII
                     }
                     else
                     {
-                        MessageBox.Show("ERROR");
+                        MessageBox.Show("Contraseña y/o Usuario Incorrecto");
                     }
                     db.con.Close();
                 }
