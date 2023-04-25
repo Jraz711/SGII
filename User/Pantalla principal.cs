@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGII.User;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +34,13 @@ namespace SGII
         {
             Pantalla_principal d = new Pantalla_principal();
             d.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ventana_de_usuario d = new ventana_de_usuario();
+            d.ShowDialog();
             this.Hide();
         }
     }

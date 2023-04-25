@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGII.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace SGII
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new M_User());
+            Application.Run(new Login());
         }
     }
 }
