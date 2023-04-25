@@ -5,12 +5,15 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SGII
 {
+   
     public partial class Login : Form
     {
        
@@ -26,13 +29,20 @@ namespace SGII
             this.Hide();
         }
 
+
+
+        public string Username;
+        public string Password;
+
         private void button1_Click(object sender, EventArgs e)
         {
+                
             try
             {
                 MyConnection db = new MyConnection();
                 using (db.con)
                 {
+                    
                     SqlCommand cmd = new SqlCommand("sp_SGII", db.con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     db.con.Open();
