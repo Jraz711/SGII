@@ -40,6 +40,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -98,7 +99,7 @@
             // cONFIGURACONToolStripMenuItem
             // 
             this.cONFIGURACONToolStripMenuItem.Name = "cONFIGURACONToolStripMenuItem";
-            this.cONFIGURACONToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cONFIGURACONToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.cONFIGURACONToolStripMenuItem.Text = "CONFIGURACON";
             this.cONFIGURACONToolStripMenuItem.Click += new System.EventHandler(this.cONFIGURACONToolStripMenuItem_Click);
             // 
@@ -113,12 +114,13 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(882, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(882, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(0, 27);
             this.panel2.Name = "panel2";
@@ -145,6 +147,16 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(56, 120);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(136, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Vista Usuario";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Pantalla_principal
             // 
@@ -185,5 +197,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button2;
     }
 }
