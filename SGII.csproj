@@ -53,6 +53,18 @@
     <Compile Include="Admin\AdminMain.Designer.cs">
       <DependentUpon>AdminMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Modify.Designer.cs">
+      <DependentUpon>Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\M_Roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\M_Roles.Designer.cs">
+      <DependentUpon>M_Roles.cs</DependentUpon>
+    </Compile>
     <Compile Include="BD\MyConnection.cs" />
     <Compile Include="Admin\LoginAdmin.cs">
       <SubType>Form</SubType>
@@ -74,6 +86,16 @@
     <Compile Include="Admin\SignupAdmin.Designer.cs">
       <DependentUpon>SignupAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="SGIIDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SGIIDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SGIIDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SGIIDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="User\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,17 +114,17 @@
     <Compile Include="User\REGISTRO.Designer.cs">
       <DependentUpon>REGISTRO.cs</DependentUpon>
     </Compile>
-    <Compile Include="User\ventana de usuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="User\ventana de usuario.Designer.cs">
-      <DependentUpon>ventana de usuario.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Admin\AdminMain.resx">
       <DependentUpon>AdminMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Modify.resx">
+      <DependentUpon>Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\M_Roles.resx">
+      <DependentUpon>M_Roles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\M_User.resx">
       <DependentUpon>M_User.cs</DependentUpon>
@@ -128,9 +150,6 @@
     <EmbeddedResource Include="User\REGISTRO.resx">
       <DependentUpon>REGISTRO.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User\ventana de usuario.resx">
-      <DependentUpon>ventana de usuario.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -140,6 +159,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SGIIDataSet.xsc">
+      <DependentUpon>SGIIDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SGIIDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SGIIDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SGIIDataSet.xss">
+      <DependentUpon>SGIIDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SGIIDataSet1.xsc">
+      <DependentUpon>SGIIDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SGIIDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SGIIDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SGIIDataSet1.xss">
+      <DependentUpon>SGIIDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

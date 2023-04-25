@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGII.Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,9 +19,9 @@ namespace SGII
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            M_User f = new M_User();
-            f.Show();
-            this.Hide();
+            M_Roles am = new M_Roles();
+            am.MdiParent = AdminMain.ActiveForm;
+            am.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -32,16 +33,14 @@ namespace SGII
 
         private void button3_Click(object sender, EventArgs e)
         {
-             M_User am = new M_User();
-            am.MdiParent = AdminMain.ActiveForm;
-            am.Show();
+
         }
         private void button4_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
             if (MyConnection.rol == "SA")
             {
@@ -56,7 +55,7 @@ namespace SGII
             {
                 button1.Visible = false;
                 button2.Visible = true;
-                button2.Visible = true;
+                button3.Visible = false;
         
 
             }
@@ -72,6 +71,31 @@ namespace SGII
         private void AdminMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
