@@ -17,7 +17,7 @@ namespace SGII
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new M_Roles());
+            Application.Run(new Login());
         }
     }
 }
