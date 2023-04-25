@@ -39,13 +39,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,9 +58,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(741, 2);
+            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button1.Location = new System.Drawing.Point(696, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 23);
+            this.button1.Size = new System.Drawing.Size(177, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "CERRAR SESION";
             this.button1.UseVisualStyleBackColor = true;
@@ -114,13 +113,12 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(882, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(882, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(0, 27);
             this.panel2.Name = "panel2";
@@ -138,16 +136,6 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 102);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(264, 325);
-            this.dataGridView1.TabIndex = 4;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -162,6 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(882, 453);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel2);
@@ -169,6 +158,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Pantalla_principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla_principal";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -176,7 +166,6 @@
             this.menuStrip2.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,7 +184,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
